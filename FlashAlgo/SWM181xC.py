@@ -42,9 +42,9 @@ flash_algo = {
     'pc_BlankCheck'      : 0x2000028F,
     'pc_Read'            : 0x12000001F,
     
-    'static_base'        : 0x20000600,
-    'begin_data'         : 0x20000800,
-    'begin_stack'        : 0x20000D00,
+    'static_base'        : 0x20000318,
+    'begin_data'         : 0x2000031C,
+    'begin_stack'        : 0x2000081C,
 
     'analyzer_supported' : False,
 
@@ -60,4 +60,7 @@ flash_algo = {
     'flash_start'        : 0x00000000,
     'flash_size'         : 0x0003E000,
     'flash_page_size'    : 0x00000100,
+    'sector_sizes': (
+        (0x00000, 0x01000),
+    )
 }

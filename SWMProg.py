@@ -34,7 +34,7 @@ class SWMProg(QWidget):
         
         uic.loadUi('SWMProg.ui', self)
 
-        self.setWindowTitle(f'{self.windowTitle()} v2.7.1')
+        self.setWindowTitle(f'{self.windowTitle()} v2.7.3')
         
         self.table.setVisible(False)
         self.resize(self.width(), 160)

@@ -281,7 +281,7 @@
      <item>
       <widget class="QPushButton" name="btnWrite">
        <property name="text">
-        <string>擦写</string>
+        <string>烧录</string>
        </property>
       </widget>
      </item>

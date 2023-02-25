@@ -14,7 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from collections import (OrderedDict, Callable)
+import sys
+if sys.version_info >= (3,10):
+    from collections.abc import (Callable)
+    from collections import (OrderedDict)
+else:
+    from collections import (OrderedDict, Callable)
+
 import logging
 
 log = logging.getLogger("sequencer")

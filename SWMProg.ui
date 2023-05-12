@@ -272,6 +272,13 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="btnChipErase">
+       <property name="text">
+        <string>整片擦除</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btnErase">
        <property name="text">
         <string>擦除</string>

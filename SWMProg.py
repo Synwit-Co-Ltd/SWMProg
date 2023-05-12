@@ -34,7 +34,7 @@ class SWMProg(QWidget):
         
         uic.loadUi('SWMProg.ui', self)
 
-        self.setWindowTitle(f'{self.windowTitle()} v2.7.4')
+        self.setWindowTitle(f'{self.windowTitle()} v2.7.5')
         
         self.table.setVisible(False)
         self.resize(self.width(), 160)
@@ -136,6 +136,16 @@ class SWMProg(QWidget):
             return False
 
         return True
+
+    @pyqtSlot()
+    def on_btnChipErase_clicked(self):
+        if self.connect():
+            self.setEnabled(False)
+            self.prgInfo.setVisible(True)
+
+            self.threadErase = ThreadAsync('erase', self.dev.chip_erase)
+            self.threadErase.taskFinished.connect(self.on_btnErase_finished)
+            self.threadErase.start()
 
     @pyqtSlot()
     def on_btnErase_clicked(self):
@@ -249,6 +259,11 @@ class SWMProg(QWidget):
 
         self.cmbAddr.setCurrentIndex(self.cmbAddr.findText(self.conf.get('globals', 'addr')))
         self.cmbSize.setCurrentIndex(self.cmbSize.findText(self.conf.get('globals', 'size')))
+
+        if self.cmbMCU.currentText() in ('SWM211', 'SWM341'):
+            self.btnChipErase.setEnabled(True)
+        else:
+            self.btnChipErase.setEnabled(False)
 
     @pyqtSlot()
     def on_btnDLL_clicked(self):

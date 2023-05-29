@@ -32,6 +32,11 @@ class SWM241(object):
         self.xlink.write_U32(0x400AA000, 1)     #HRC select 48MHz
         self.xlink.write_U32(0x40000000, 1)     #Core Clock select HRC
 
+    def chip_erase(self):
+        self.flash.Init(0, 0, 1)
+        self.flash.EraseChip()
+        self.flash.UnInit(1)
+    
     def sect_erase(self, addr, size):
         for i in range(0, size // self.SECT_SIZE):
             print(f'Erase @ 0x{addr + self.SECT_SIZE * i:08X}')

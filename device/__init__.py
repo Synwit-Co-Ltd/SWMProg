@@ -7,6 +7,7 @@ from . import SWM211
 from . import SWM220
 from . import SWM241
 from . import SWM260
+from . import SWM261
 from . import SWM320
 from . import SWM320_NOR
 from . import SWM341
@@ -23,6 +24,7 @@ Devices = collections.OrderedDict([
         ('SWM211',       SWM211.SWM211),
         ('SWM241',       SWM241.SWM241),
         ('SWM260',       SWM260.SWM260),
+        ('SWM261',       SWM261.SWM261),
         ('SWM320',       SWM320.SWM320),
         ('SWM341',       SWM341.SWM341),
         ('SWM341_SFC',   SWM341_SFC.SWM341_SFC),

@@ -34,7 +34,7 @@ class SWMProg(QWidget):
         
         uic.loadUi('SWMProg.ui', self)
 
-        self.setWindowTitle(f'{self.windowTitle()} v2.7.5')
+        self.setWindowTitle(f'{self.windowTitle()} v2.7.6')
         
         self.table.setVisible(False)
         self.resize(self.width(), 160)
@@ -260,7 +260,7 @@ class SWMProg(QWidget):
         self.cmbAddr.setCurrentIndex(self.cmbAddr.findText(self.conf.get('globals', 'addr')))
         self.cmbSize.setCurrentIndex(self.cmbSize.findText(self.conf.get('globals', 'size')))
 
-        if self.cmbMCU.currentText() in ('SWM211', 'SWM341'):
+        if self.cmbMCU.currentText() in ('SWM211', 'SWM241', 'SWM261', 'SWM341'):
             self.btnChipErase.setEnabled(True)
         else:
             self.btnChipErase.setEnabled(False)
